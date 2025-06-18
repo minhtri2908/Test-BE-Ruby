@@ -75,11 +75,12 @@ test:
 # URL environment variable explicitly:
 #
 production:
-  <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
+  primary:            # kết nối chính của app
+    <<: *default
+    url: <%= ENV["DATABASE_URL"] %>
 
-  cable:
-    adapter: postgresql
+  cable:              # kết nối ActionCable / solid_cable
+    <<: *default
     url: <%= ENV["DATABASE_URL"] %>
 
 
