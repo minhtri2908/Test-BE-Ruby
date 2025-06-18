@@ -19,9 +19,11 @@ test:
 
 production:
   primary:
-    <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
-
+    adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
+  queue:
+    adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
   cable:
-    <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
+    adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
