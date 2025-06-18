@@ -140,3 +140,7 @@ lib/
 ```
 
 ---
+
+# Demo link api: 
+
+- Top 10 students in Group A (Math, Physics, Chemistry) [https://rails-thpt2024.onrender.com/api/student_scores/1234567](https://rails-thpt2024.onrender.com/api/student_scores/1234567)
