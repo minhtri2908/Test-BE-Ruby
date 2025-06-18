@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   namespace :api do
+  root to: "base#index"
   get 'student_scores/lookup/:sbd', to: 'student_scores#lookup'
   get 'student_scores/report', to: 'student_scores#report'
   get 'student_scores/statistics', to: 'student_scores#statistics'
