@@ -13,8 +13,7 @@ class StudentScore < ApplicationRecord
     }, allow_nil: true
   end
 
-# ✅ OOP: xử lý logic phân loại điểm thành 4 mức cho 1 môn
-    def self.level_counts_for(subject)
+  def self.level_counts_for(subject)
     raise ArgumentError, "Invalid subject" unless SUBJECTS.include?(subject)
 
     grouped = StudentScore
@@ -28,13 +27,9 @@ class StudentScore < ApplicationRecord
                 )
                 .count
 
-    # đảm bảo đủ 4 mức
     { '>=8': 0, '6-8': 0, '4-6': 0, '<4': 0 }.merge(grouped.transform_keys(&:to_sym))
-    end
+  end
 
-
-
-  # ✅ OOP: xử lý phân loại tất cả các môn
   def self.all_subjects_level_statistics
     results = {}
     SUBJECTS.each do |subj|
